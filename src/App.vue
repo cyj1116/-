@@ -1,30 +1,29 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <ul class="tab">
+      <router-link to="/list" class="tab-item">列表页</router-link>
+      <router-link to="/history" class="tab-item">历史浏览页</router-link>
+    </ul>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <style lang="less">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.tab-item {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 0px;
+  padding: 10px;
+  border: 1px solid black;
 }
 </style>
